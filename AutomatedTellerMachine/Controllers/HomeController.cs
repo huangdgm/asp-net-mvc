@@ -46,6 +46,8 @@ namespace AutomatedTellerMachine.Controllers
          * You implement an action filter as an attribute that inherits from the ActionFilterAttribute class.
          * You override the OnActionExecuting method if you want your logic to run before the action method.
          * You override the OnActionExecuted method if you want your logic to run after the action method.
+         * You can also apply the action filter globally. This can be done by adding a new action filter instance
+         * to GlobalFilterCollection in the FilterConfig.cs file.
          */
         public ActionResult Contact()
         {
