@@ -32,7 +32,9 @@ namespace AutomatedTellerMachine.Controllers
             ViewBag.Message = "Your application description page.";
 
             // By default, the View() will return the View that has the same name with the action, or the View 
-            // that has the same name with the ActionNameAttribute(if specified).
+            // that has the same name with the ActionNameAttribute(if specified). As there is no view that has 
+            // the name of "about-the-atm", we cannot use View() directly. Instead, we need to specify the name 
+            // of the existing View. Here we use the 'About' View.
             return View("About");
         }
 
