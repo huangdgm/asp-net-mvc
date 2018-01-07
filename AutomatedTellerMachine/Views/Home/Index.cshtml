@@ -29,3 +29,42 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+@{
+    var amounts = new List<decimal> { 100, 25.5m, -40, 75.0m };
+}
+
+<ul>
+    @foreach (decimal amount in amounts)
+    {
+        <li>@FormatAmount(amount)</li>
+
+        // Two ways to embed text inside the C# code block:
+        <text>The text embedded in the c# code block.</text>
+        @:The text embedded in the c# code block.
+    }
+</ul>
+
+@*
+    The compiler is smart enough to distingush the @ symbol between the c# code and the email address.
+    For other scenarios, such as the tweet, we can use double @ symbol.
+*@
+You are using @Request.Browser.Browser, and that's OK.
+Email us at huangdgm@gmail.com
+If you have any questions, send us a tweet @@mvcatm.
+
+@*
+    This serves as the helper method.
+*@
+@helper FormatAmount(decimal amount)
+    {
+        var color = "green";
+
+        if (amount < 0)
+        {
+            color = "red";
+        }
+
+        // '{0:C}' here formats the amount with the currency format.
+        <span style="color:@color">@String.Format("{0:C}", amount)</span>
+}
