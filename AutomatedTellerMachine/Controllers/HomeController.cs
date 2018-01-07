@@ -22,7 +22,7 @@ namespace AutomatedTellerMachine.Controllers
         [ActionName("about-the-atm")]
         public ActionResult About()
         {
-            // The ViewBag is used to pass information between action method and the view.
+            // The ViewBag here is used to pass information between action method and the view.
             // This information is available only if the action method returns the View,
             // if the action method redirects to another action method, that information is not available.
             ViewBag.Message = "Your application description page.";

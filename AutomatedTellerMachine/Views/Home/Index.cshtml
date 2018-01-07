@@ -1,5 +1,9 @@
 ﻿@{
+    // The ViewBag here is used to pass information between the View and the Layout.
     ViewBag.Title = "Home Page";
+
+    // We can specify an individual layout file for the current view:
+    // Layout = "MyLayout.cshtml";
 }
 
 <div class="jumbotron">
@@ -39,6 +43,7 @@
     {
         <li>@FormatAmount(amount)</li>
 
+        // We can use the usual c# commenting syntax inside the c# code block.
         // Two ways to embed text inside the C# code block:
         <text>The text embedded in the c# code block.</text>
         @:The text embedded in the c# code block.
@@ -67,4 +72,12 @@ If you have any questions, send us a tweet @@mvcatm.
 
         // '{0:C}' here formats the amount with the currency format.
         <span style="color:@color">@String.Format("{0:C}", amount)</span>
+}
+
+@*
+    This is the javascript section which can be inserted into the layout file.
+    The following script is just a demo.
+*@
+@section scripts {
+    <scripts>var testing = true;</scripts>
 }

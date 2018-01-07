@@ -30,6 +30,9 @@
         </div>
     </div>
     <div class="container body-content">
+        @*
+            This is where the content of the View is injected.
+        *@
         @RenderBody()
         <hr />
         <footer>
@@ -39,6 +42,12 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
+    @*
+        The RenderSection will look for the 'section scripts' in the View file.
+        If the 'section scripts' exists, then it will be inserted here, otherwise,
+        this RenderSection will be ignored(because the value of the 'required' parameter is false).
+    *@
     @RenderSection("scripts", required: false)
 </body>
 </html>
