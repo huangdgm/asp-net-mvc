@@ -1,6 +1,8 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
+// DH: The BundleConfig can help group scripts together and provide a way to switch between different 
+// script versions.
 namespace AutomatedTellerMachine
 {
     public class BundleConfig
@@ -26,6 +28,8 @@ namespace AutomatedTellerMachine
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            BundleTable.EnableOptimizations = true; // DH: This can help reduce the total number of request that the clients are trying to make, which can help improve the proficiency.
         }
     }
 }

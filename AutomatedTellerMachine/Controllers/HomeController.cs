@@ -55,7 +55,7 @@ namespace AutomatedTellerMachine.Controllers
         }
 
         // The name of the parameter 'message' must match the name of the form element name (here is the textarea name).
-        [HttpPost]  // 'This attribute restricts the action method to handle only Http POST request.
+        [HttpPost]  // This attribute restricts the action method to handle only Http POST request.
         public ActionResult Contact(string message)
         {
             ViewBag.Message = "Thanks. We have got your message: " + message;
